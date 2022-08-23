@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:me_chat/screens/archived_screen.dart';
-import 'package:me_chat/screens/chat/chat_details_screen.dart';
 import 'package:me_chat/screens/main_screen.dart';
 import 'package:me_chat/screens/settings/account_settings_screen.dart';
 import 'package:me_chat/screens/settings/chats_settings_screen.dart';

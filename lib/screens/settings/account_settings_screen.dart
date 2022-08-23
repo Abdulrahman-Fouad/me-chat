@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:me_chat/constants/colors.dart';
 import 'package:me_chat/widgets/settings_screens_app_bar.dart';
 
 class AccountSettingsScreen extends StatelessWidget {
