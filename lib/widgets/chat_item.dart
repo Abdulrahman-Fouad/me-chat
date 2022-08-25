@@ -10,12 +10,7 @@ class ChatItem extends StatelessWidget {
     bool pinned = false;
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: ((context) => const ChatScreen()),
-          ),
-        );
+        Navigator.pushNamed(context, ChatScreen.routeName);
       },
       child: ListTile(
         leading: const Hero(

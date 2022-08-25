@@ -5,6 +5,7 @@ import 'package:me_chat/widgets/chat_app_bar.dart';
 import 'package:me_chat/widgets/message_bar.dart';
 
 class ChatScreen extends StatefulWidget {
+  static const routeName = '/chat-screen';
   const ChatScreen({super.key});
 
   @override

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "875496711494",
+    "firebase_url": "https://me-chat-8c8ad-default-rtdb.firebaseio.com",
     "project_id": "me-chat-8c8ad",
     "storage_bucket": "me-chat-8c8ad.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "875496711494-a9h8g8q2a9vfpmicch9fae5pkfrfpdvt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.me_chat",
+            "certificate_hash": "f992a39385e8cb9d304fabfeb30a4e7a9659004c"
+          }
+        },
         {
           "client_id": "875496711494-j9oanpotn5cm3kk6ped2t67uir1vt35d.apps.googleusercontent.com",
           "client_type": 3
