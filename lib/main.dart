@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:me_chat/auth/controller/auth_controller.dart';
+import 'package:me_chat/constants/loading_spinner.dart';
+import 'package:me_chat/screens/error_screen.dart';
+import 'package:me_chat/screens/main_screen.dart';
+import 'package:me_chat/screens/welcome_screen.dart';
 import 'app_router.dart';
 import 'constants/colors.dart';
 import 'firebase_options.dart';
-import 'screens/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,11 +23,11 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Me Chat',
@@ -34,15 +38,19 @@ class MyApp extends StatelessWidget {
         ),
       ),
       onGenerateRoute: (settings) => onGenerateRoute(settings),
-      home: const WelcomeScreen(),
-      // routes: {
-      //   SettingsScreen.routeName: (context) => SettingsScreen(),
-      //   AccountSettingsScreen.routeName: (context) => const AccountSettingsScreen(),
-      //   ChatsSettingsScreen.routeName: (context) => const ChatsSettingsScreen(),
-      //   NotificationsSettingsScreen.routeName: (context) => const NotificationsSettingsScreen(),
-      //   StorageSettingsScreen.routeName: (context) => const StorageSettingsScreen(),
-      //   HelpSettingsScreen.routeName: (context) => const HelpSettingsScreen(),
-      // },
+      home: ref.watch(userDataAuthProvider).when(
+            data: (user) {
+              if (user == null) {
+                return const WelcomeScreen();
+              }
+              return const MainScreen();
+            },
+            error: (error, stackTrace) => ErrorScreen(
+              error: error.toString(),
+            ),
+            //TODO edit the spinner to be overlaying not a screen
+            loading: () => const LoadingSpinner(),
+          ),
     );
   }
 }

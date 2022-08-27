@@ -7,6 +7,7 @@ import 'package:me_chat/widgets/chats_tab.dart';
 import 'package:me_chat/widgets/status_tab.dart';
 
 class MainScreen extends StatelessWidget {
+  static const routeName = '/main-screen';
   const MainScreen({Key? key}) : super(key: key);
 
   Tab createTab(

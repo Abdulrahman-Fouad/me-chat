@@ -4,7 +4,6 @@ import 'package:me_chat/auth/controller/auth_controller.dart';
 import 'package:me_chat/constants/colors.dart';
 import 'package:me_chat/constants/custom_button.dart';
 import 'package:country_picker/country_picker.dart';
-import 'package:sms_autofill/sms_autofill.dart';
 
 class AuthScreen extends ConsumerStatefulWidget {
   static const routeName = '/auth-screen';
@@ -43,7 +42,6 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
   void sendPhoneNumber() {
     String phoneNumber = phoneController.text.trim();
     if (phoneNumber.isNotEmpty && _country != null) {
-      SmsAutoFill().listenForCode;
       ref
           .read(authControllerProvider)
           .signinWithPhone(context, '+${_country!.phoneCode}$phoneNumber');

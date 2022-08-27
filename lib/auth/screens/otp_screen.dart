@@ -8,7 +8,7 @@ class OTPScreen extends ConsumerWidget {
   final String verificationId;
   const OTPScreen({super.key, required this.verificationId});
 
-  void verifyOTP(WidgetRef ref, BuildContext context, String userOTP) {
+  void verifyOTP(BuildContext context, WidgetRef ref, String userOTP) {
     ref
         .read(authControllerProvider)
         .verifyOTP(context, userOTP, verificationId);
@@ -31,6 +31,7 @@ class OTPScreen extends ConsumerWidget {
               const Text('We have sent SMS with a code'),
               SizedBox(
                 width: size.width * .5,
+                //TODO Edit it to auto fill with the SMS and redirect the user to the main screen showing an overlaying spinner
                 child: TextField(
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
@@ -40,7 +41,7 @@ class OTPScreen extends ConsumerWidget {
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     if (value.length == 6) {
-                      verifyOTP(ref, context, value.trim());
+                      verifyOTP(context, ref, value.trim());
                     }
                   },
                 ),

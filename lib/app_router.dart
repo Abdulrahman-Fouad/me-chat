@@ -9,9 +9,13 @@ import 'package:me_chat/screens/settings/help_settings_screen.dart';
 import 'package:me_chat/screens/settings/notification_settings_screen.dart';
 import 'package:me_chat/screens/settings/settings_screen.dart';
 import 'package:me_chat/screens/settings/storag_settings_screen.dart';
+import 'package:me_chat/screens/settings/user_information_screen.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case MainScreen.routeName:
+      return MaterialPageRoute(builder: (context) => const MainScreen());
+
     case SettingsScreen.routeName:
       return MaterialPageRoute(builder: (context) => SettingsScreen());
 
@@ -46,6 +50,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
           builder: (context) => OTPScreen(verificationId: verificationId));
 
+    case UserInfoScreen.routeName:
+      return MaterialPageRoute(builder: (context) => const UserInfoScreen());
     default:
       return MaterialPageRoute(builder: (context) => const MainScreen());
   }
