@@ -54,4 +54,12 @@ class AuthController {
     UserModel? user = await authRepository.getCurrentUserData();
     return user;
   }
+
+  Stream<UserModel> userData(String uId) {
+    return authRepository.userData(uId);
+  }
+
+  void setUserState(bool isOnline) {
+    authRepository.setUserState(isOnline);
+  }
 }

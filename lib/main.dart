@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:me_chat/auth/controller/auth_controller.dart';
-import 'package:me_chat/constants/loading_spinner.dart';
-import 'package:me_chat/screens/error_screen.dart';
-import 'package:me_chat/screens/main_screen.dart';
-import 'package:me_chat/screens/welcome_screen.dart';
+import 'package:me_chat/common/loading_spinner.dart';
+import 'package:me_chat/common/screens/error_screen.dart';
+import 'package:me_chat/main_mobile_layout/screens/main_screen.dart';
+import 'package:me_chat/main_mobile_layout/screens/welcome_screen.dart';
 import 'app_router.dart';
-import 'constants/colors.dart';
+import 'common/colors.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -48,7 +48,7 @@ class MyApp extends ConsumerWidget {
             error: (error, stackTrace) => ErrorScreen(
               error: error.toString(),
             ),
-            //TODO edit the spinner to be overlaying not a screen
+            // Todo edit the spinner to be overlaying not a screen
             loading: () => const LoadingSpinner(),
           ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:me_chat/auth/controller/auth_controller.dart';
-import 'package:me_chat/constants/colors.dart';
-import 'package:me_chat/constants/custom_button.dart';
+import 'package:me_chat/common/colors.dart';
+import 'package:me_chat/auth/widgets/custom_elevated_button.dart';
 import 'package:country_picker/country_picker.dart';
 
 class AuthScreen extends ConsumerStatefulWidget {
